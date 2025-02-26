@@ -5,8 +5,16 @@ from sklearn.cluster import KMeans
 import logging
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
 logging.basicConfig(level=logging.INFO)
+
+@app.route('/categorize', methods=['OPTIONS'])
+def handle_options():
+    response = jsonify({"message": "CORS preflight successful"})
+    response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000"
+    response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
 
 @app.route('/categorize', methods=['POST'])
 def categorize():

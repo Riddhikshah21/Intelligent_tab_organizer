@@ -21,8 +21,7 @@ function App() {
     }));
 
     try {
-      console.log("calling api")
-      const response = await fetch('http://localhost:5000/categorize', {
+      const response = await fetch('http://127.0.0.1:5000/categorize', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
