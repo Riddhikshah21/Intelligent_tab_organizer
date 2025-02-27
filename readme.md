@@ -15,7 +15,7 @@ A Chrome extension to organize your tabs intelligently using machine learning.
 3. Activate the virtual environment:
    - Windows: `venv\Scripts\activate`
    - macOS/Linux: `source venv/bin/activate`
-4. Install dependencies: `pip install flask flask-cors scikit-learn`
+4. Install dependencies: `pip install -r requirements.txt`
 5. Run the Flask app: `python main.py`
 
 ## Loading the Extension
